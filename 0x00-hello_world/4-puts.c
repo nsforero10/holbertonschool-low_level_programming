@@ -1,6 +1,7 @@
 #include <stdio.h>
-/*
- *This prints a String
+/**
+ * main - This prints a String
+ * Return: 0
  */
 int main(void)
 {
