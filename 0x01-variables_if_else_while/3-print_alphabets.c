@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <time.h>
+#include <stdio.h>
 
 /**
  *main - print the alphabet two times in  one line,
