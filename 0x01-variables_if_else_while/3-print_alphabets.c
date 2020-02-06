@@ -11,13 +11,13 @@ int main(void)
 	char chr;
 
 	chr = 'a';
-	while (chr != 'z')
+	while (chr <= 'z')
 	{
 		putchar(chr);
 		chr++;
 	}
 	chr = 'A';
-	while (chr != 'Z')
+	while (chr <= 'Z')
 	{
 		putchar(chr);
 		chr++;

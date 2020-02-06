@@ -10,7 +10,7 @@ int main(void)
 	char chr;
 
 	chr = 'a';
-	while (chr != 'z')
+	while (chr <= 'z')
 	{
 		if (chr != 'q' && chr != 'e')
 		{
