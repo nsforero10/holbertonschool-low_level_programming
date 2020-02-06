@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
-/* more headers goes there */
 
 /**
  *main - print the alphabet in one line, skiping q and e
