@@ -1,6 +1,7 @@
 #include <stdio.h>
+
 /**
- *main - print the alphabet in one line
+ *main - print the numbers from 00 - 99
  *
  *Return: 0
 */
@@ -17,8 +18,10 @@ int main(void)
 			putchar(i);
 			putchar(j);
 			if (i != '9' || j != '9')
-			putchar(',');
-			putchar(' ');
+			{
+				putchar(',');
+				putchar(' ');
+			}
 			j++;
 		}
 		i++;
