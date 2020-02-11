@@ -16,6 +16,7 @@ void times_table(void)
 		while (m < 10)
 		{
 			int r = n * m;
+
 			if (m != 0)
 			{
 				if (r / 10 != 0)
