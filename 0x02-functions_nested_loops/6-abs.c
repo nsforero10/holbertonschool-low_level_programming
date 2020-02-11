@@ -1,5 +1,6 @@
- #include "holberton.h"
- /**
+#include "holberton.h"
+
+/**
  * _abs - absolute a number
  *@n: the number to be absed
  *
