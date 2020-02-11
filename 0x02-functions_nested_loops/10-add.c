@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-*print_sign - checks the sign of a number and prints it
+*add - checks the sign of a number and prints it
 *@a: number to sum
 *@b: number to sum
 *
