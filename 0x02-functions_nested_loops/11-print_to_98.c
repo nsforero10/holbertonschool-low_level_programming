@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  *print_to_98 - print times table
- *
+ *@n: reference number
  *
  *Return: void
  */
@@ -16,9 +16,9 @@ void print_to_98(int n)
 		while (i <= 98)
 		{
 			if (i < 98)
-				printf("%i, ",i);
+				printf("%i, ", i);
 			else
-				printf("%i\n",i);
+				printf("%i\n", i);
 			i++;
 		}
 	}
@@ -27,9 +27,9 @@ void print_to_98(int n)
 		while (i >= 98)
 		{
 			if (i > 98)
-				printf("%i, ",i);
+				printf("%i, ", i);
 			else
-				printf("%i\n",i);
+				printf("%i\n", i);
 			i--;
 		}
 	}
