@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "holberton.h" 
 
 /**
  *print_times_table - print times table
@@ -7,7 +7,7 @@
  */
 void print_times_table(int c)
 {
-	int n, m;
+	int n, m, r;
 
 	if (c <= 15 && c >= 0)
 	{
@@ -17,7 +17,7 @@ void print_times_table(int c)
 			m = 0;
 			while (m <= c)
 			{
-				int r = n * m;
+				r = n * m;
 
 				if (m != 0)
 				{
