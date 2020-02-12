@@ -10,9 +10,11 @@ int main(void)
 
 	for (num = 0; num < 1024 ; num++)
 	{
-		(num % 5) ? (rta += num) : (rta);
-		(num % 3) ? (rta += num) : (rta);
+		if (num % 5)
+			rta += num;
+		if (num % 3)
+			rta += num;
 	}
-	printf("%i", rta);
-	return (rta);
+	printf("%i \n", rta);
+	return (0);
 }
