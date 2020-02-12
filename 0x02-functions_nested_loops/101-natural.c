@@ -10,9 +10,7 @@ int main(void)
 
 	for (num = 0; num < 1024 ; num++)
 	{
-		if (num % 5)
-			rta += num;
-		if (num % 3)
+		if( num % 5  == 0 || num % 3 == 0)
 			rta += num;
 	}
 	printf("%i \n", rta);
