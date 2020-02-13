@@ -5,7 +5,7 @@
  *
  *Return: 1 if is lowercase, 0 otherwise
  */
-int _islower(int caracter)
+int _isupper(int caracter)
 {
 	int resultado;
 
