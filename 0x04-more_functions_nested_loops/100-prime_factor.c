@@ -32,7 +32,7 @@ int main(void)
 	aux = num;
 	for (i = 2; i < num ; i++)
 	{
-		while (num % i == 0)
+		while (aux % i == 0)
 		{
 			if (isPrime(i) == 1)
 			{
