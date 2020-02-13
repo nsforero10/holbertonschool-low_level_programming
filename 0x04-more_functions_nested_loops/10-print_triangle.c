@@ -9,12 +9,16 @@ void print_triangle(int n)
 {
 	int i, j;
 
-	for (i = 0; i < n; i++)
+	if (n > 0)
 	{
-		for (j = 0; j < n; j++)
+		for (i = 0; i < n; i++)
 		{
-			(j >= (n - 1) - i) ? (_putchar('#')) : (_putchar(' '));
+			for (j = 0; j < n; j++)
+			{
+				(j >= (n - 1) - i) ?
+					(_putchar('#')) : (_putchar(' '));
+			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
