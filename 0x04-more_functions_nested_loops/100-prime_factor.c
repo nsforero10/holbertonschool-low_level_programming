@@ -1,36 +1,49 @@
 #include "holberton.h"
 /**
-*print_triangle - printing numbers from 0-9  whithout 2 and 4
+*isPrime - x
 *@n: size of the square
 *
 *Return: 1 if is lowercase, 0 otherwise
 */
 #include <stdio.h>
 
-int isPrime(int n)
+int isPrime(unsigned long n)
 {
-	int i;
-	for(i = 2; i < n; i++)
+	unsigned long int i;
+
+	for (i = 2; i != n; i++)
 	{
-		if ( n % i == 0)
-			return (-1);
+		if (n % i == 0)
+			return (0);
 	}
 	return (1);
 }
+/**
+*main - x
+*
+*Retrun: 0
+*/
 
 int main(void)
 {
-	long  num, i,rta;
+	unsigned long  num, i, aux;
 
 	num = 612852475143;
-	for (i=num-1; i >= num/2 ; i--)
+	aux = num;
+	for (i = 2; i < num ; i++)
 	{
-		if(num%i == 0 && isPrime(i) == 1)
+		while (num % i == 0)
 		{
-			rta = i;
-			break;
+			if (isPrime(i) == 1)
+			{
+				aux = aux / i;
+				if (aux == 1)
+				{
+					printf("%lu\n", i);
+					return (0);
+				}
+			}
 		}
 	}
-	printf("%lu\n",rta);
 	return (0);
 }
