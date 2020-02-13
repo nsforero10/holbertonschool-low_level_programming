@@ -12,8 +12,10 @@ int main(void)
 	for (i = 1; i < 100; i++)
 	{
 		(i % 3 == 0) ?
-			((i % 5 == 0) ? printf("FizzBuzz ") : printf("Fizz ")) :
-			((i % 5 == 0) ? printf("Buzz ") : printf("%i ", i));
+			((i % 5 == 0) ? printf("FizzBuzz") : printf("Fizz")) :
+			((i % 5 == 0) ? printf("Buzz") : printf("%i", i));
+		if (i < 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
