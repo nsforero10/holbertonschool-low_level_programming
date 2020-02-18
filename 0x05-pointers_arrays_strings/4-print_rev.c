@@ -26,7 +26,7 @@ void print_rev(char *str)
 {
 	int  count;
 
-	count = _strlen(str);
+	count = _strlen(str) - 1;
 	while (count >= 0)
 	{
 		_putchar(str[count]);
