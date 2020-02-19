@@ -25,12 +25,13 @@ int _strlen(char *pArray)
 
 char *_strcpy(char *dest, char *src)
 {
-	int  count;
+	int  count, length;
 
 	count = 0;
-	while (src[count] != 0)
+	length = _strlen(src);
+	while (count <= length)
 	{
-		*(dest + count) = src[count];
+		*(dest + count) = *(src + count);
 		count++;
 	}
 	return (dest);
