@@ -7,30 +7,28 @@
  */
 char *cap_string(char *str)
 {
-	char dic[13] = " \n\t,;.!?\"(){}";
-	unsigned int i, j;
-	char crt;
+char dic[13] = " \n\t,;.!?\"(){}";
+unsigned int i, j;
+char crt, nxt;
 
-	i = 0;
-	while (str[i])
+i = 0;
+while (str[i])
+{
+	crt = str[i];
+	if (i == 0 && crt >= 'a' && crt <= 'z')
 	{
-		crt = str[i];
-		if (i == 0 && crt >= 'a' && crt <= 'z')
-		{
-			crt -= 32;
-		}
-		else
-		{
-			for (j = 0; dic[j]; j++)
-			{
-				if (crt == dic[j])
-				{
-					if (str[i + 1] >= 'a' && str[i + 1])
-						str[i + 1] -= 32;
-				}
-			}
-		}
-		i++;
+		crt -= 32;
 	}
-	return (str);
+	else
+	{
+		for (j = 0; dic[j]; j++)
+		{
+			nxt = str[i + 1];
+			if (crt == dic[j] && nxt >= 'a' && nxt <= 'z')
+				str[i+1] -= 32;
+		}
+	}
+	i++;
+}
+return (str);
 }
