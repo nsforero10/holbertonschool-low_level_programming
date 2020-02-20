@@ -24,8 +24,9 @@ while (str[i])
 		for (j = 0; dic[j]; j++)
 		{
 			nxt = str[i + 1];
-			if (crt == dic[j] && nxt >= 'a' && nxt <= 'z')
-				str[i+1] -= 32;
+			if ((crt == dic[j] || crt == 0)
+			    && nxt >= 'a' && nxt <= 'z')
+				str[i + 1] -= 32;
 		}
 	}
 	i++;
