@@ -17,7 +17,7 @@ while (str[i])
 	crt = str[i];
 	if (i == 0 && crt >= 'a' && crt <= 'z')
 	{
-		crt -= 32;
+		str[i] -= 32;
 	}
 	else
 	{
