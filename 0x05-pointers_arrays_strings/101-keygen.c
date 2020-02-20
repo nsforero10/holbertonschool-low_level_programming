@@ -19,6 +19,6 @@ int main(void)
 			size += randnum;
 		}
 	}
-	puchar(2772 - size);
+	putchar(2772 - size);
 	return (0);
 }
