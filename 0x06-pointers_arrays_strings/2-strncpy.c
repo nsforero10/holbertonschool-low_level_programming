@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
- * _strncpy -
- *
- * Return: 
+ * _strncpy - copy a string
+ * @dest: destiny
+ * @src: string to copy
+ * @n: size of src
+ * Return: pointer to
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -14,5 +16,5 @@ char *_strncpy(char *dest, char *src, int n)
 	for ( ; i < n; i++)
 		dest[i] = '\0';
 
-	return dest;
+	return (dest);
 }
