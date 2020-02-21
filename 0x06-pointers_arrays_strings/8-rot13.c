@@ -7,7 +7,7 @@
  */
 char *rot13(char *src)
 {
-	int i = 0,j;
+	int i = 0, j;
 	char dic[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char dic2[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
