@@ -19,6 +19,7 @@ char *rot13(char *src)
 			if (src[i] == dic[j])
 			{
 				src[i] = dic2[j];
+				break;
 			}
 			j++;
 		}
