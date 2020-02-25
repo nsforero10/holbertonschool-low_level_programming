@@ -23,7 +23,7 @@ char *_strstr(char *s, char *f)
 			break;
 		}
 	}
-	if(*s == '\0')
+	if (*s == '\0')
 		return (0);
 	else
 		return (s);
