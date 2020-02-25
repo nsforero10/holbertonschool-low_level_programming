@@ -11,8 +11,11 @@ char *_strstr(char *s, char *f)
 {
 	int j;
 
+	if (*f == '\000')
+		return (s);
 	for (j = 0; *s; s++)
 	{
+
 		if (*s != *f)
 			f = f - j, j = 0;
 		else
