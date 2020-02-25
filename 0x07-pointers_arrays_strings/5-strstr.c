@@ -20,11 +20,8 @@ char *_strstr(char *s, char *f)
 		if (!*f)
 		{
 			s = s - j + 1;
-			break;
+			return (s);
 		}
 	}
-	if (*s == '\0')
-		return (0);
-	else
-		return (s);
+	return (0);
 }
