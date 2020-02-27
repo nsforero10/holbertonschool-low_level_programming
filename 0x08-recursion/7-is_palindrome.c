@@ -21,6 +21,8 @@ int compare(char *p, int size)
 {
 	if (*p != *(p + (--size)))
 		return (0);
+	if (size == 0 || size == 1)
+		return (1);
 	p++, size--;
 	return (1 * compare(p, size));
 }
