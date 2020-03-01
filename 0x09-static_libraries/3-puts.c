@@ -1,19 +1,14 @@
 #include "holberton.h"
 
 /**
- *_puts - retrun the length of a string
- *@str: the string to be printed
+ * _puts - puts string to stdout
+ * @str: string to print to stdout
+ * Return: always void
  */
 
 void _puts(char *str)
 {
-	int  count;
-
-	count = 0;
-	while (str[count] != 0)
-	{
-		_putchar(str[count]);
-		count++;
-	}
+	while (*str)
+		_putchar(*str++);
 	_putchar('\n');
 }
