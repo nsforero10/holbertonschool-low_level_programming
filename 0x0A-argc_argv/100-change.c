@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	if (res <= 0)
 	{
 		printf("0\n");
-		return (1);
+		return (0);
 	}
 	for (i = 0; res != 0; i++)
 	{
@@ -30,5 +30,5 @@ int main(int argc, char *argv[])
 		res = res % coins[i];
 	}
 	printf("%d\n", num_coins);
-	return (1);
+	return (0);
 }
