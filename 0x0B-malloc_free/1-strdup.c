@@ -21,11 +21,11 @@ char *_strdup(char *str)
 	char *scp;
 	unsigned int size, i;
 
-	if (!str)
+	if (*str == '\0')
 		return (NULL);
 	size = _strlength(str);
 	scp = malloc(size * sizeof(char));
-	if (!str)
+	if (*scp == 0)
 		return (NULL);
 	i = 0;
 	while (i <= size)
