@@ -28,7 +28,7 @@ char *_strdup(char *str)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < size)
+	while (i <= size)
 	{
 		scp[i] = str[i];
 		i++;
