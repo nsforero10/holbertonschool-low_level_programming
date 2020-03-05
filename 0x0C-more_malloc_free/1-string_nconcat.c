@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+
 /**
  * string_nconcat - concatenates the first string
  * with the frist n chars of the second
@@ -24,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (*s2 && aux < n)
 		cnt++, s2++, aux++;
 	s2 -= aux;
-	ptr = malloc(cnt * sizeof(char));
+	ptr = malloc(cnt * sizeof(char)+1);
 	if (!ptr)
 	{
 		free(ptr);
