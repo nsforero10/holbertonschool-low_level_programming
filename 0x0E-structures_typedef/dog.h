@@ -4,8 +4,7 @@
  *struct dog -dog
  * @name : char*
  * @age: int
- * @owner char*
-
+ * @owner: char*
  *Description: define a dog structure
 */
 struct dog
