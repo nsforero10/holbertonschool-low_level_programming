@@ -1,5 +1,5 @@
-#include "dog.h"
-
+#ifndef _DOG_H_
+#define _DOG_H_
 /**
  *struct dog -dog
  * @name : char*
@@ -15,12 +15,6 @@ struct dog
 	char *owner;
 };
 
-/**
- * free_dog -
- *
- * Return:
- */
-void free_dog(dog_t *d)
-{
-
-}
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+#endif

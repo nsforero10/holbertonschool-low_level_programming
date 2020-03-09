@@ -1,11 +1,18 @@
 #include "dog.h"
 
 /**
- * print_dog -
- *
- * Return: 
+ * init_dog - inits a dog
+ * @d: dog
+ * @name: name
+ * @age: age
+ * @owner: owner
+ * Return: nothing
  */
-void print_dog(struct dog *d)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-
+	if(!d)
+		return;
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }
