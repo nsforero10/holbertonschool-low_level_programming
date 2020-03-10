@@ -7,9 +7,9 @@
  * @d: new dog's nam
  * Return: void
  */
-void free_dog(dog_t *d);
+void free_dog(dog_t *d)
 {
-	if (!*d)
+	if (!d)
 		return;
 	free(d->name);
 	free(d->owner);
