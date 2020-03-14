@@ -39,10 +39,13 @@ void float_funct(va_list c)
  */
 void string_funct(va_list c)
 {
-	if (c)
-		printf("%s", va_arg(c, char *));
+	char *ptr;
+
+	ptr = va_arg(c, char *);
+	if (ptr)
+		printf("%s", ptr);
 	else
-		print("(nil)");
+		printf("(nil)");
 }
 
 /**
