@@ -10,7 +10,8 @@
  * @chr: character
  * @f: function match
  */
-typedef struct obj{
+typedef struct obj
+{
 	char chr;
 	void (*f)(va_list);
 } obj_t;
