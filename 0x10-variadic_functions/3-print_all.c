@@ -42,10 +42,9 @@ void string_funct(va_list c)
 	char *ptr;
 
 	ptr = va_arg(c, char *);
-	if (ptr)
-		printf("%s", ptr);
-	else
-		printf("(nil)");
+	if (!ptr)
+		ptr = "(nil)";
+	printf("%s", ptr);
 }
 
 /**
@@ -72,7 +71,11 @@ void print_all(const char * const format, ...)
 		while (objs[j].chr)
 		{
 			if (objs[j].chr == format[i])
-				printf("%s", comma), objs[j].f(args), comma = ", ";
+			{
+				printf("%s", comma);
+				objs[j].f(args);
+				comma = ", ";
+			}
 			j++;
 		}
 		i++;
