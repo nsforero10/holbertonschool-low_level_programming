@@ -2,21 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-/**
- * _strlen - messures a string
- * @ptr: string to messure
- * Return: the size of the string
- */
-unsigned int _strlen(char *ptr)
-{
-	unsigned int i = 0;
-
-	while (*ptr)
-		i++, ptr++;
-	return (i);
-}
-
 /**
  * add_node - a new node on the top of the
  * @head: the head of the linked list
@@ -27,11 +12,14 @@ list_t *add_node(list_t **head, const char *str)
 {
 	char *ptr = strdup(str);
 	list_t *new = malloc(sizeof(list_t));
+	unsigned int i = 0;
 
+	while (*str)
+		i++, str++;
 	if (!new)
 		return (NULL);
 	(*new).str = ptr;
-	(*new).len = _strlen(ptr);
+	(*new).len = i;
 	(*new).next = *head;
 	*head = new;
 	return (new);
