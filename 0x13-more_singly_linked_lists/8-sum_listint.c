@@ -5,6 +5,7 @@
  * @head: th head of the linked list
  * Return: the sum of the nodes->n
  */
+
 int sum_listint(listint_t *head)
 {
 	int sum = 0;
