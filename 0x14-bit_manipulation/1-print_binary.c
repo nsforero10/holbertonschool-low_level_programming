@@ -1,23 +1,28 @@
 #include "holberton.h"
 
 /**
- * print_binary - print binary representation of a int
- * @n: the integer top prpint
- * Return: nothing
+ * dec_bin - print in binary with bitwise operator
+ * @n: decimal number
+ * Return: void - just prints
+ */
+void dec_bin(unsigned long int n)
+{
+	if (n == 0)
+		return;
+
+	dec_bin(n >> 1);
+	n = n & 1;
+	_putchar(n + 48);
+}
+/**
+ * print_binary - print decimal in binary
+ * @n: decimal number
+ * Return: void - just prints
  */
 void print_binary(unsigned long int n)
 {
 	if (n == 0)
-	{
 		_putchar('0');
-		return;
-	}
 	else
-	{
-		while (n != 0)
-		{
-			_putchar((n & 1) ? '1' : '0');
-			n = n >> 1;
-		}
-	}
+		dec_bin(n);
 }
