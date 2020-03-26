@@ -6,7 +6,7 @@
  * @pow: exponent
  * Return: the result
  */
-unsigned int pow_to(unsigned int n, unsigned pow)
+unsigned int pow_to(unsigned int n, unsigned int pow)
 {
 	unsigned int rest = 1;
 
@@ -16,7 +16,7 @@ unsigned int pow_to(unsigned int n, unsigned pow)
 	{
 		rest *= n, pow--;
 	}
-	return rest;
+	return (rest);
 }
 
 /**
@@ -34,9 +34,9 @@ int _strlen(const char *pArray)
 }
 
 /**
- * binary_to_uint -
- *
- * Return: 
+ * binary_to_uint - converts an binary string to unsigned int
+ * @b: the string to convert
+ * Return: the decimal number
  */
 unsigned int binary_to_uint(const char *b)
 {
@@ -52,7 +52,7 @@ unsigned int binary_to_uint(const char *b)
 			n += (b[size] - 48) * pow_to(2, pow);
 		else
 			return (0);
-		pow++, size--;	
+		pow++, size--;
 	}
 	return (n);
 }
