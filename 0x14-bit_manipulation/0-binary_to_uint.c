@@ -43,7 +43,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int  n = 0, pow = 0;
 	int size;
 
-	if (!*b)
+	if (!b)
 		return (0);
 	size = _strlen(b) - 1;
 	while (size >= 0)
