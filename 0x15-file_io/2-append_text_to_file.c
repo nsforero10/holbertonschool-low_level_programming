@@ -15,9 +15,10 @@ int _strlen(char *p)
 }
 
 /**
- * append_text_to_file -
- *
- * Return: 
+ * append_text_to_file - appends to a file
+ * @filename: file name
+ * @text_content: text content
+ * Return: 1 if fails, -1 if not
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
