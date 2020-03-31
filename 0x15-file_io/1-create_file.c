@@ -5,9 +5,9 @@
  * @p: the pointer
  * Return: the size
  */
-size_t _strlen(char *p)
+int _strlen(char *p)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (*p)
 		i++, p++;
@@ -26,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename || !text_content)
 		return (-1);
-	fdo = open(filename, O_CREAT | O_RDWR, 0600);
+	fdo = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fdo == -1)
 		return (-1);
 	fdw = write(fdo, text_content, _strlen(text_content));
