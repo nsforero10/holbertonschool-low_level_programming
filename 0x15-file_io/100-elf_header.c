@@ -1,8 +1,14 @@
-#include "holberton.h"
 #include <elf.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
  * close_a_file - Close a file
- * @fil: ELF file.
+ * @file: ELF file.
  * Return: none.
  */
 void close_a_file(int file)
@@ -15,7 +21,7 @@ void close_a_file(int file)
 }
 /**
  * check_file - Checks if file is ELF.
- * @rem: Remaining file content.
+ * @r: Remaining file content.
  * Return: none.
  */
 void check_file(unsigned char *r)
@@ -203,26 +209,25 @@ void print_type(unsigned int type, unsigned char *class)
 }
 /**
  * print_entry - Print ELF entry.
- * @entry: ELF type.
+ * @e: ELF type.
  * @class: ELF Class
  * Return: none.
  */
-void print_entry(unsigned long int entry, unsigned char *class)
+void print_entry(unsigned long int e, unsigned char *class)
 {
 	printf("  Entry point address:               ");
 
 	if (class[EI_DATA] == ELFDATA2MSB)
 	{
-		entry = ((entry << 8) & 0xFF00FF00) |
-			  ((entry >> 8) & 0xFF00FF);
-		entry = (entry << 16) | (entry >> 16);
+		e = ((e << 8) & 0xFF00FF00) | ((e >> 8) & 0xFF00FF);
+		e = (e << 16) | (e >> 16);
 	}
 
 	if (class[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)entry);
+		printf("%#x\n", (unsigned int)e);
 
 	else
-		printf("%#lx\n", entry);
+		printf("%#lx\n", e);
 }
 /**
  * main - Displays the information contained in the ELF header at the
@@ -233,40 +238,40 @@ void print_entry(unsigned long int entry, unsigned char *class)
  */
 int main(int ac, char **av)
 {
-	Elf64_Ehdr *header;
-	int openn, readd;
+	Elf64_Ehdr *h;
+	int o, r;
 
 	if (ac != 2 || av[1] == NULL)
 		dprintf(STDERR_FILENO, "Usage: %s elf_filename\n",
 			av[0]), exit(98);
-	openn = open(av[1], O_RDONLY);
-	if (openn == -1)
+	o = open(av[1], O_RDONLY);
+	if (o == -1)
 		dprintf(STDERR_FILENO, "Error: Cannot read file %s\n",
 			av[1]), exit(98);
-	header = malloc(sizeof(Elf64_Ehdr));
-	if (!header)
+	h = malloc(sizeof(Elf64_Ehdr));
+	if (!h)
 	{
 		dprintf(STDERR_FILENO, "Error: No memory allocated for %s\n",
 			av[1]);
-		close_a_file(openn), exit(98);
+		close_a_file(o), exit(98);
 	}
-	readd = read(openn, header, sizeof(Elf64_Ehdr));
-	if (readd == -1)
+	r = read(o, h, sizeof(Elf64_Ehdr));
+	if (r == -1)
 	{
 		printf("Error: Cannot read file %s\n", av[1]);
-		free(header), close_a_file(openn), exit(98);
+		free(h), close_a_file(o), exit(98);
 	}
-	check_file(header->e_ident);
-	print_magic(header->e_ident);
-	print_class(header->e_ident);
-	print_data(header->e_ident);
-	print_version(header->e_ident);
-	print_os_abi(header->e_ident);
-	print_abi(header->e_ident);
-	print_type(header->e_type, header->e_ident);
-	print_entry(header->e_entry, header->e_ident);
+	check_file(h->e_ident);
+	print_magic(h->e_ident);
+	print_class(h->e_ident);
+	print_data(h->e_ident);
+	print_version(h->e_ident);
+	print_os_abi(h->e_ident);
+	print_abi(h->e_ident);
+	print_type(h->e_type, h->e_ident);
+	print_entry(h->e_entry, h->e_ident);
 
-	free(header);
-	close_a_file(openn);
+	free(h);
+	close_a_file(o);
 	return (0);
 }
