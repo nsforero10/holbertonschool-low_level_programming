@@ -27,3 +27,4 @@ def island_perimeter(grid):
                     total_p += 1
 
     return total_p
+    
